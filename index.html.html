@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arooj Fatima | Research Scientist · Biotechnology</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  /* backgrounds */
+  --bg:       #f8faff;
+  --bg2:      #eef2ff;
+  --surface:  #ffffff;
+  --surface2: #f0f4ff;
+  /* borders */
+  --border:   #dde3f5;
+  /* text */
+  --text:     #0f172a;
+  --text2:    #334155;
+  --text3:    #64748b;
+  /* blue – primary */
+  --blue:     #1d4ed8;
+  --blue-l:   #3b82f6;
+  --blue-bg:  #eff6ff;
+  /* violet – education/skills */
+  --violet:   #7c3aed;
+  --violet-l: #a78bfa;
+  --violet-bg:#f5f3ff;
+  /* emerald – awards/community */
+  --emerald:  #059669;
+  --emerald-l:#34d399;
+  --emerald-bg:#ecfdf5;
+  /* rose – thesis/projects */
+  --rose:     #e11d48;
+  --rose-l:   #fb7185;
+  --rose-bg:  #fff1f2;
+  /* amber – dates/gold */
+  --amber:    #d97706;
+  --amber-l:  #fbbf24;
+  --amber-bg: #fffbeb;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'IBM Plex Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.6; }
+
+/* ── TRANSLATOR BAR ── */
+.translator-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: linear-gradient(90deg, #1e3a8a, #1d4ed8, #1e3a8a);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center; gap: 1.5rem;
+  padding: 0.45rem 1.5rem;
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em;
+  border-bottom: 1px solid rgba(59,130,246,0.4);
+}
+.lang-btn {
+  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35);
+  color: #fff; padding: 0.22rem 0.85rem; border-radius: 3px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em;
+  cursor: pointer; transition: all 0.2s; text-transform: uppercase;
+}
+.lang-btn.active { background: #fff; color: #1d4ed8; font-weight: 700; border-color: #fff; }
+.lang-btn:hover:not(.active) { background: rgba(255,255,255,0.25); }
+.translator-label { opacity: 0.85; font-size: 0.62rem; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 32px; left: 0; right: 0; z-index: 100;
+  padding: 0.85rem 2.5rem; display: flex; justify-content: space-between; align-items: center;
+  background: rgba(255,255,255,0.97); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 12px rgba(29,78,216,0.07);
+}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--blue); letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+.nav-links a { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text3); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--blue); }
+
+/* ── WRAPPER ── */
+.wrapper { max-width: 1020px; margin: 0 auto; padding: 0 2.2rem; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 8rem 0 5rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #1d4ed8 100%);
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 50% at 80% 30%, rgba(99,102,241,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 15% 80%, rgba(251,191,36,0.12) 0%, transparent 55%);
+}
+.hero-grid { display: grid; grid-template-columns: 1fr 230px; gap: 3.5rem; align-items: center; position: relative; z-index: 1; }
+.hero-accent-1 { display: none; }
+.hero-accent-2 { display: none; }
+
+/* eyebrow */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: #93c5fd;
+  margin-bottom: 1.2rem;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(147,197,253,0.35);
+  padding: 0.3rem 0.8rem 0.3rem 0.6rem; border-radius: 20px;
+  width: fit-content; backdrop-filter: blur(4px);
+}
+.eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: #93c5fd; animation: pulse 2.2s infinite; }
+
+/* name */
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 6.5vw, 5.2rem);
+  font-weight: 700; line-height: 1.0;
+  color: #ffffff; margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.hero-name em { color: #fbbf24; font-style: italic; display: inline; }
+
+.hero-degree {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-style: italic; font-weight: 400;
+  color: #bfdbfe; margin-bottom: 0.4rem;
+}
+.hero-loc {
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
+  color: #93c5fd; letter-spacing: 0.08em; margin-bottom: 1.6rem;
+}
+
+/* stat row */
+.hero-stats {
+  display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.8rem; padding: 1.2rem 1.5rem;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+}
+.stat { display: flex; flex-direction: column; align-items: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 700; color: #fbbf24; line-height: 1; }
+.stat-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: #bfdbfe; margin-top: 0.12rem; }
+.stat-div { width: 1px; background: rgba(255,255,255,0.2); align-self: stretch; }
+
+.hero-desc { font-size: 0.95rem; line-height: 1.85; color: #bfdbfe; max-width: 530px; margin-bottom: 1.8rem; text-align: justify; }
+.hero-desc strong { color: #ffffff; font-weight: 600; }
+
+/* badges */
+.badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.badge { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.07em;
+  text-transform: uppercase; padding: 0.28rem 0.75rem; border-radius: 20px; }
+.bg { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
+.bt { background: rgba(255,255,255,0.1); color: #e0f2fe; border: 1px solid rgba(255,255,255,0.2); }
+.bv { background: rgba(52,211,153,0.15); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.3); }
+
+/* cta */
+.cta { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+.btn { padding: 0.75rem 1.8rem; border-radius: 6px; font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+  cursor: pointer; border: none; transition: all 0.22s; }
+.btn-p { background: #fbbf24; color: #0f172a; font-weight: 700; box-shadow: 0 4px 20px rgba(251,191,36,0.45); }
+.btn-p:hover { background: #fcd34d; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(251,191,36,0.55); }
+.btn-o { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
+.btn-o:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+
+/* ── PHOTO ── */
+.photo-col { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; position: relative; z-index: 1; }
+.photo-ring {
+  width: 200px; height: 200px; border-radius: 50%; overflow: hidden;
+  border: 3px solid rgba(251,191,36,0.7);
+  background: linear-gradient(135deg, rgba(29,78,216,0.4), rgba(124,58,237,0.3));
+  box-shadow: 0 8px 40px rgba(251,191,36,0.3), 0 0 0 7px rgba(251,191,36,0.1);
+  cursor: pointer; transition: box-shadow 0.3s;
+}
+.photo-ring:hover { box-shadow: 0 14px 55px rgba(251,191,36,0.45), 0 0 0 10px rgba(251,191,36,0.15); }
+.photo-ring img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.photo-ph { width: 100%; height: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 0.4rem; text-align: center; }
+.ph-icon { font-size: 2.8rem; opacity: 0.5; }
+.ph-txt { font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; letter-spacing: 0.09em;
+  text-transform: uppercase; color: #bfdbfe; line-height: 1.5; }
+input[type=file] { display: none; }
+.upload-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #fbbf24; background: rgba(251,191,36,0.12);
+  border: 1px solid rgba(251,191,36,0.3); padding: 0.35rem 1rem; border-radius: 4px;
+  cursor: pointer; transition: all 0.2s; }
+.upload-lbl:hover { background: rgba(251,191,36,0.22); }
+.pulse-row { display: flex; align-items: center; gap: 0.4rem; font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.08em; color: #6ee7b7; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #6ee7b7; animation: pulse 2.2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.8)} }
+
+/* ── DIVIDER ── */
+.divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--blue) 30%, var(--violet) 70%, transparent); opacity: 0.2; }
+section { padding: 4.5rem 0; }
+
+/* ── SECTION LABELS ── */
+.slbl {
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.63rem; letter-spacing: 0.18em;
+  text-transform: uppercase; margin-bottom: 0.4rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+/* colour variants per section */
+.slbl          { color: var(--blue); }
+.slbl::before  { content: ''; width: 16px; height: 2px; background: var(--blue); border-radius: 1px; }
+.s-violet .slbl              { color: var(--violet); }
+.s-violet .slbl::before      { background: var(--violet); }
+.s-emerald .slbl             { color: var(--emerald); }
+.s-emerald .slbl::before     { background: var(--emerald); }
+.s-rose .slbl                { color: var(--rose); }
+.s-rose .slbl::before        { background: var(--rose); }
+
+h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 700; color: var(--text); margin-bottom: 2.2rem; line-height: 1.15; }
+h2 em { font-style: italic; }
+.s-blue   h2 em { color: var(--blue); }
+.s-violet h2 em { color: var(--violet); }
+.s-emerald h2 em { color: var(--emerald); }
+.s-rose   h2 em { color: var(--rose); }
+section:not([class*="s-"]) h2 em { color: var(--blue); }
+
+/* ── CARDS ── */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 1.3rem 1.5rem; transition: all 0.22s;
+  box-shadow: 0 1px 6px rgba(29,78,216,0.05);
+}
+.card:hover { border-color: var(--blue-l); box-shadow: 0 4px 20px rgba(29,78,216,0.1); transform: translateY(-1px); }
+.clbl { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text3); margin-bottom: 0.35rem; }
+.cval { font-size: 0.9rem; color: var(--text2); line-height: 1.6; }
+.cval a { color: var(--blue); text-decoration: none; font-weight: 500; }
+.cval a:hover { text-decoration: underline; }
+
+/* ── TIMELINE ── */
+.tl { display: flex; flex-direction: column; gap: 1.2rem; }
+.tl-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 4px solid var(--blue);
+  border-radius: 8px; padding: 1.6rem 1.9rem; transition: all 0.25s;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+.tl-item:hover { border-left-color: var(--amber); box-shadow: 0 6px 24px rgba(29,78,216,0.1); transform: translateX(3px); }
+.tl-item.gold { border-left-color: var(--violet); }
+.tl-item.gold:hover { border-left-color: var(--amber); }
+.tl-hd { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+.tl-title { font-size: 1rem; font-weight: 600; color: var(--text); }
+.tl-org { font-size: 0.86rem; color: var(--blue); margin-top: 0.08rem; font-weight: 500; }
+.tl-item.gold .tl-org { color: var(--violet); }
+.tl-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.63rem; color: var(--amber);
+  background: var(--amber-bg); border: 1px solid rgba(217,119,6,0.2);
+  padding: 0.18rem 0.65rem; border-radius: 20px; white-space: nowrap; font-weight: 600; }
+.tl-pts { list-style: none; margin-top: 0.7rem; display: flex; flex-direction: column; gap: 0.2rem; }
+.tl-pts li { font-size: 0.88rem; color: var(--text2); line-height: 1.7; padding-left: 1.2rem; position: relative; text-align: justify; }
+.tl-pts li::before { content: '›'; position: absolute; left: 0; color: var(--blue); font-weight: 700; font-size: 1rem; }
+.tl-item.gold .tl-pts li::before { color: var(--violet); }
+.tl-pts li strong { color: var(--text); font-weight: 600; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.9rem; }
+.tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.06em;
+  padding: 0.18rem 0.6rem; border-radius: 20px;
+  background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(29,78,216,0.15); font-weight: 500; }
+.tl-item.gold .tag { background: var(--violet-bg); color: var(--violet); border-color: rgba(124,58,237,0.15); }
+
+/* ── THESIS ── */
+.thesis-hero {
+  background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+  border: 1px solid rgba(225,29,72,0.2); border-radius: 10px;
+  padding: 2.2rem 2.5rem; position: relative; overflow: hidden;
+  box-shadow: 0 4px 28px rgba(225,29,72,0.08);
+}
+.thesis-hero::before {
+  content: '"';
+  position: absolute; top: -0.5rem; left: 1.5rem;
+  font-family: 'Playfair Display', serif; font-size: 9rem; color: rgba(225,29,72,0.07);
+  line-height: 1; pointer-events: none;
+}
+.thesis-tag { display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--rose); color: #fff;
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1rem; }
+.thesis-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 600; font-style: italic; color: var(--text); line-height: 1.4; margin-bottom: 0.6rem;
+}
+.thesis-supervisor { font-size: 0.85rem; color: var(--text3); margin-bottom: 1.2rem; }
+.thesis-supervisor strong { color: var(--text2); }
+.thesis-desc { font-size: 0.9rem; color: var(--text2); line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; }
+.thesis-links { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.thesis-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em;
+  text-transform: uppercase; text-decoration: none;
+  padding: 0.55rem 1.2rem; border-radius: 6px; transition: all 0.22s;
+}
+.tl-primary { background: var(--rose); color: #fff; box-shadow: 0 3px 16px rgba(225,29,72,0.35); }
+.tl-primary:hover { background: #be123c; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(225,29,72,0.45); }
+.tl-secondary { background: transparent; color: var(--rose); border: 1.5px solid rgba(225,29,72,0.4); }
+.tl-secondary:hover { background: var(--rose-bg); }
+.thesis-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(225,29,72,0.15); }
+.tmeta { display: flex; flex-direction: column; }
+.tmeta-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 0.57rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); }
+.tmeta-val { font-size: 0.88rem; color: var(--text2); font-weight: 500; margin-top: 0.1rem; }
+.tmeta-val a { color: var(--rose); text-decoration: none; }
+.tmeta-val a:hover { text-decoration: underline; }
+
+/* ── SKILLS ── */
+.skills-g { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1rem; }
+.sg {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 1.4rem; transition: all 0.22s; box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+.sg:hover { border-color: rgba(124,58,237,0.3); box-shadow: 0 6px 24px rgba(124,58,237,0.1); transform: translateY(-2px); }
+.sg-title { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--violet); margin-bottom: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 0.45rem; }
+.pills { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+.pill { font-size: 0.79rem; color: var(--text2); background: var(--violet-bg);
+  border: 1px solid rgba(124,58,237,0.12); padding: 0.22rem 0.65rem; border-radius: 20px; }
+.pill.new { background: var(--amber-bg); color: var(--amber); border-color: rgba(217,119,6,0.2); font-weight: 600; }
+
+/* ── PROJECTS ── */
+.proj-g { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1rem; }
+.proj {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 1.4rem; transition: all 0.22s; box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  border-top: 3px solid var(--rose);
+}
+.proj:hover { border-color: var(--rose-l); box-shadow: 0 6px 24px rgba(225,29,72,0.1); transform: translateY(-3px); }
+.proj h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600;
+  color: var(--text); margin-bottom: 0.4rem; }
+.proj p { font-size: 0.84rem; color: var(--text3); line-height: 1.65; text-align: justify; }
+
+/* ── AWARDS ── */
+.aw-list { display: flex; flex-direction: column; gap: 0.65rem; }
+.aw { display: flex; align-items: center; gap: 1rem; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.3rem;
+  transition: all 0.2s; box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  border-left: 4px solid var(--emerald);
+}
+.aw:hover { border-left-color: var(--amber); box-shadow: 0 4px 18px rgba(5,150,105,0.12); transform: translateX(2px); }
+.aw-i { font-size: 1.1rem; flex-shrink: 0; }
+.aw-t { font-size: 0.88rem; color: var(--text2); line-height: 1.5; text-align: justify; }
+
+/* ── CONTACT ── */
+.con-g { display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 1rem; }
+.con { background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 1.2rem 1.3rem; display: flex; align-items: center; gap: 0.9rem;
+  transition: all 0.2s; box-shadow: 0 1px 6px rgba(0,0,0,0.04); }
+.con:hover { border-color: var(--blue-l); box-shadow: 0 4px 18px rgba(29,78,216,0.1); transform: translateY(-1px); }
+.ci { font-size: 1.2rem; }
+.con-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 0.57rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text3); margin-bottom: 0.16rem; }
+.con-val { font-size: 0.86rem; color: var(--text); font-weight: 500; }
+.con-val a { color: var(--blue); text-decoration: none; font-weight: 600; }
+.con-val a:hover { text-decoration: underline; }
+
+/* ── LEGEND ── */
+.legend { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.4rem;
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.08em; color: var(--text3); }
+
+/* ── SECTION ALT ── */
+.section-alt { background: linear-gradient(135deg, #f8faff 0%, #eef2ff 100%); }
+
+/* ── FOOTER ── */
+footer { padding: 2.5rem 0; text-align: center; border-top: 1px solid var(--border);
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--text3); background: var(--surface); }
+footer span { color: var(--blue); font-weight: 700; }
+
+/* ── ANIMATIONS ── */
+.fi { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.fi.on { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 720px) {
+  .hero-grid, .two { grid-template-columns: 1fr; }
+  .photo-col { order: -1; }
+  .nav-links { gap: 1rem; }
+  .hero-name { font-size: 2.8rem; }
+  .translator-bar { font-size: 0.6rem; gap: 0.8rem; }
+}
+
+/* ── TRANSLATION ── */
+[data-de] { display: none; }
+body.lang-de [data-en] { display: none; }
+body.lang-de [data-de] { display: inherit; }
+</style>
+</head>
+<body id="body" class="lang-en">
+
+<!-- TRANSLATOR BAR -->
+<div class="translator-bar">
+  <span class="translator-label">🌐 Language / Sprache:</span>
+  <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇬🇧 English</button>
+  <button class="lang-btn" id="btn-de" onclick="setLang('de')">🇩🇪 Deutsch</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Arooj Fatima</div>
+  <div class="nav-links">
+    <a href="#about"><span data-en>About</span><span data-de>Über mich</span></a>
+    <a href="#exp"><span data-en>Experience</span><span data-de>Erfahrung</span></a>
+    <a href="#edu"><span data-en>Education</span><span data-de>Bildung</span></a>
+    <a href="#thesis"><span data-en>Thesis</span><span data-de>Abschlussarbeit</span></a>
+    <a href="#skills"><span data-en>Skills</span><span data-de>Fähigkeiten</span></a>
+    <a href="#awards"><span data-en>Awards</span><span data-de>Auszeichnungen</span></a>
+    <a href="#contact"><span data-en>Contact</span><span data-de>Kontakt</span></a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" style="border-bottom: 1px solid rgba(6,182,212,0.18); box-shadow: 0 8px 80px rgba(6,182,212,0.08);">
+  <div class="hero-accent-1"></div>
+  <div class="hero-accent-2"></div>
+  <div class="wrapper" style="width:100%">
+    <div class="hero-grid">
+      <div>
+        <!-- EN -->
+        <div class="eyebrow" data-en><div class="eyebrow-dot"></div>Research Scientist · Life Sciences</div>
+        <!-- DE -->
+        <div class="eyebrow" data-de><div class="eyebrow-dot"></div>Wissenschaftliche Mitarbeiterin · Biowissenschaften</div>
+
+        <div class="hero-name">Arooj <em>Fatima</em></div>
+
+        <div class="hero-degree">
+          <span data-en>M.Sc. Biotechnology — Hochschule Offenburg, Germany</span>
+          <span data-de>M.Sc. Biotechnologie — Hochschule Offenburg, Deutschland</span>
+        </div>
+        <div class="hero-loc">
+          <span data-en>📍 Offenburg, Germany &nbsp;·&nbsp; Available for Werkstudent &amp; Praktikum</span>
+          <span data-de>📍 Offenburg, Deutschland &nbsp;·&nbsp; Verfügbar für Werkstudent &amp; Praktikum</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">🏅</div>
+            <div class="stat-lbl" data-en>Gold Medalist</div>
+            <div class="stat-lbl" data-de>Goldmedaille</div>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <div class="stat-num">2+</div>
+            <div class="stat-lbl" data-en>Yrs Research</div>
+            <div class="stat-lbl" data-de>J. Forschung</div>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <div class="stat-num">100+</div>
+            <div class="stat-lbl" data-en>Samples/Week</div>
+            <div class="stat-lbl" data-de>Proben/Woche</div>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <div class="stat-num">98%</div>
+            <div class="stat-lbl" data-en>Accuracy</div>
+            <div class="stat-lbl" data-de>Genauigkeit</div>
+          </div>
+        </div>
+
+        <!-- BIO EN -->
+        <p class="hero-desc" data-en>
+          Gold Medalist and top-ranked B.S. graduate with <strong>2+ years of hands-on research experience</strong> in clinical microbiology and molecular diagnostics. Currently pursuing an <strong>M.Sc. in Biotechnology at Hochschule Offenburg, Germany</strong>, with expertise in molecular techniques including PCR, qPCR, and nucleic acid extraction; microbial culture, pathogen identification, and antimicrobial resistance profiling. Expanding knowledge in bioprocess engineering, advanced analytical methods (HPLC, DLS, Mass Spectrometry, FTIR), environmental biotechnology, and bioinformatics — with a strong commitment to applied research in biotechnology and life sciences.
+        </p>
+        <!-- BIO DE -->
+        <p class="hero-desc" data-de>
+          Goldmedaillengewinnerin und Jahrgangsbeste mit <strong>2+ Jahren praktischer Forschungserfahrung</strong> in klinischer Mikrobiologie und molekularer Diagnostik. Derzeit im <strong>M.Sc.-Studium Biotechnologie an der Hochschule Offenburg, Deutschland</strong>, mit Expertise in molekularen Techniken (PCR, qPCR, Nukleinsäureextraktion), mikrobieller Kultivierung, Pathogenidentifikation und Antibiotikaresistenzprofilierung. Vertiefung in Bioprozesstechnik, analytischen Methoden (HPLC, DLS, Massenspektrometrie, FTIR), Umweltbiotechnologie und Bioinformatik — mit ausgeprägtem Engagement für angewandte Forschung in Biotechnologie und Biowissenschaften.
+        </p>
+
+        <div class="badges">
+          <span class="badge bt" data-en>Biotechnology &amp; Microbiology</span>
+          <span class="badge bt" data-de>Biotechnologie &amp; Mikrobiologie</span>
+          <span class="badge bg" data-en>Ranked 1st · Gold Medalist</span>
+          <span class="badge bg" data-de>Rang 1 · Goldmedaillengewinnerin</span>
+          <span class="badge bv" data-en>Student Visa · 20h/week</span>
+          <span class="badge bv" data-de>Studentenvisum · 20h/Woche</span>
+        </div>
+
+        <div class="cta">
+          <a href="mailto:aroojfatimacust21@gmail.com" class="btn btn-p">
+            <span data-en>✉ Get In Touch</span>
+            <span data-de>✉ Kontakt aufnehmen</span>
+          </a>
+          <a href="#exp" class="btn btn-o">
+            <span data-en>View My Work</span>
+            <span data-de>Meine Arbeit ansehen</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- PHOTO -->
+      <div class="photo-col">
+        <div class="photo-ring" onclick="document.getElementById('pi').click()">
+          <img id="pimg" src="" alt="Arooj Fatima">
+          <div class="photo-ph" id="pph">
+            <div class="ph-icon">👤</div>
+            <div class="ph-txt" data-en>Click to add<br>your photo</div>
+            <div class="ph-txt" data-de>Klicken zum<br>Foto hinzufügen</div>
+          </div>
+        </div>
+        <input type="file" id="pi" accept="image/*">
+        <label for="pi" class="upload-lbl">
+          <span data-en>📷 Upload Photo</span>
+          <span data-de>📷 Foto hochladen</span>
+        </label>
+        <div class="pulse-row">
+          <div class="dot"></div>
+          <span data-en>Open to Opportunities</span>
+          <span data-de>Offen für Möglichkeiten</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about" class="s-blue">
+  <div class="wrapper">
+    <div class="slbl"><span data-en>Overview</span><span data-de>Übersicht</span></div>
+    <h2><span data-en>About <em>Me</em></span><span data-de>Über <em>Mich</em></span></h2>
+    <div class="two fi">
+      <div class="card">
+        <div class="clbl" data-en>Location</div><div class="clbl" data-de>Standort</div>
+        <div class="cval">Offenburg, Germany 🇩🇪</div>
+      </div>
+      <div class="card">
+        <div class="clbl">Email</div>
+        <div class="cval"><a href="mailto:aroojfatimacust21@gmail.com">aroojfatimacust21@gmail.com</a></div>
+      </div>
+      <div class="card">
+        <div class="clbl" data-en>Phone (Germany)</div><div class="clbl" data-de>Telefon (Deutschland)</div>
+        <div class="cval"><a href="tel:+4915164371174">+49 151 643 71174</a></div>
+      </div>
+      <div class="card">
+        <div class="clbl" data-en>Work Eligibility</div><div class="clbl" data-de>Arbeitsberechtigung</div>
+        <div class="cval" data-en>Student Visa — up to 20 h/week in Germany</div>
+        <div class="cval" data-de>Studentenvisum — bis zu 20 Std./Woche in Deutschland</div>
+      </div>
+      <div class="card" style="grid-column:1/-1">
+        <div class="clbl">Erasmus</div>
+        <div class="cval" data-en>Semester 1 Exchange at University of Warmia &amp; Mazury, Poland — returning to Hochschule Offenburg, June 2026</div>
+        <div class="cval" data-de>Erasmus-Austausch (Semester 1) an der Universität Ermland-Masuren, Polen — Rückkehr nach Offenburg, Juni 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="exp" class="section-alt s-blue">
+  <div class="wrapper">
+    <div class="slbl"><span data-en>Career</span><span data-de>Beruflicher Werdegang</span></div>
+    <h2><span data-en>Professional <em>Experience</em></span><span data-de>Berufliche <em>Erfahrung</em></span></h2>
+    <div class="tl">
+
+      <div class="tl-item fi">
+        <div class="tl-hd">
+          <div>
+            <div class="tl-title" data-en>Research Associate</div>
+            <div class="tl-title" data-de>Wissenschaftliche Mitarbeiterin</div>
+            <div class="tl-org">Shaheen Lab &amp; Diagnostic Centre, Pakistan</div>
+          </div>
+          <div class="tl-date">02/2023 – 05/2025</div>
+        </div>
+        <ul class="tl-pts" data-en>
+          <li>Processed 100+ clinical samples/week (blood, urine, swabs, sputum) at 98% accuracy — microbial culture, Gram staining, pathogen identification and aseptic technique under GLP-compliant documentation.</li>
+          <li>AMR testing via Kirby-Bauer disk diffusion &amp; MIC determination; AMR gene detection by PCR genotyping and DNA sequencing.</li>
+          <li>Molecular techniques: DNA/RNA extraction, PCR · qPCR · RT-PCR, gel electrophoresis, result interpretation using SnapGene &amp; NCBI BLAST.</li>
+          <li>Immunological assays: ELISA, Bradford/BCA protein quantification, SDS-PAGE, Western blot under ISO-equivalent QC standards.</li>
+          <li>Whole genome sequencing and phylogenetic analysis of multidrug-resistant bacteria using MEGA X, MUSCLE and ClustalW.</li>
+        </ul>
+        <ul class="tl-pts" data-de>
+          <li>Bearbeitung von 100+ klinischen Proben/Woche (Blut, Urin, Abstriche) mit 98% Genauigkeit — mikrobielle Kultivierung, Gram-Färbung, Pathogenidentifikation unter GLP-konformer Dokumentation.</li>
+          <li>AMR-Testung via Kirby-Bauer-Scheibendiffusion &amp; MHK-Bestimmung; AMR-Gen-Nachweis durch PCR-Genotypisierung und DNA-Sequenzierung.</li>
+          <li>Molekulare Techniken: DNA/RNA-Extraktion, PCR · qPCR · RT-PCR, Gelelektrophorese, Ergebnisinterpretation mit SnapGene &amp; NCBI BLAST.</li>
+          <li>Immunologische Assays: ELISA, Bradford/BCA-Proteinquantifizierung, SDS-PAGE, Western Blot unter ISO-äquivalenten QS-Standards.</li>
+          <li>Whole-Genome-Sequenzierung und phylogenetische Analyse multiresistenter Bakterien mit MEGA X, MUSCLE und ClustalW.</li>
+        </ul>
+        <div class="tags"><span class="tag">PCR/qPCR/RT-PCR</span><span class="tag">AMR</span><span class="tag">ELISA</span><span class="tag">SDS-PAGE</span><span class="tag">WGS</span><span class="tag">SnapGene</span><span class="tag">GLP/ISO</span></div>
+      </div>
+
+      <div class="tl-item fi">
+        <div class="tl-hd">
+          <div>
+            <div class="tl-title" data-en>Biomedical Laboratory Assistant</div>
+            <div class="tl-title" data-de>Biomedizinische Laborassistentin</div>
+            <div class="tl-org">Fauji Foundation Hospital, Pakistan</div>
+          </div>
+          <div class="tl-date">08/2022 – 10/2022</div>
+        </div>
+        <ul class="tl-pts" data-en>
+          <li>Processed ~50 patient samples/day across 7 departments — microbial culturing, Gram staining, microscopy, biochemical assays under chain-of-custody protocols.</li>
+          <li>Antibiotic susceptibility testing via disk diffusion &amp; VITEK 2 automated identification; prepared diagnostic reports for clinical staff.</li>
+          <li>Applied ELISA, CBC, blood typing, urine analysis and histopathological staining.</li>
+        </ul>
+        <ul class="tl-pts" data-de>
+          <li>Bearbeitung von ~50 Patientenproben/Tag in 7 Abteilungen — mikrobielle Kultivierung, Gram-Färbung, Mikroskopie unter Protokollstandards.</li>
+          <li>Antibiotikaempfindlichkeitstestung via Scheibendiffusion &amp; VITEK 2; Erstellung diagnostischer Berichte für das klinische Personal.</li>
+          <li>Anwendung von ELISA, Blutbild, Blutgruppenbestimmung, Urinanalyse und histopathologischer Färbung.</li>
+        </ul>
+        <div class="tags"><span class="tag">VITEK 2</span><span class="tag">Clinical Diagnostics</span><span class="tag">CBC</span><span class="tag">Histopathology</span></div>
+      </div>
+
+      <div class="slbl" style="margin-top:0.5rem;"><span data-en>Teaching</span><span data-de>Lehrtätigkeit</span></div>
+
+      <div class="tl-item fi">
+        <div class="tl-hd">
+          <div>
+            <div class="tl-title" data-en>Biology Lecturer</div>
+            <div class="tl-title" data-de>Biologiedozentin</div>
+            <div class="tl-org">Allama Iqbal College, Evening</div>
+          </div>
+          <div class="tl-date">2024 – 2025</div>
+        </div>
+        <ul class="tl-pts" data-en><li>Taught advanced biology and chemistry; developed engaging lesson plans and interactive materials.</li></ul>
+        <ul class="tl-pts" data-de><li>Unterricht in Biologie und Chemie; Erstellung interaktiver Lehrpläne und Unterrichtsmaterialien.</li></ul>
+      </div>
+
+      <div class="tl-item fi">
+        <div class="tl-hd">
+          <div>
+            <div class="tl-title" data-en>Biology &amp; Chemistry Teaching Assistant</div>
+            <div class="tl-title" data-de>Lehrbeauftragte für Biologie &amp; Chemie</div>
+            <div class="tl-org" data-en>Part-time</div>
+            <div class="tl-org" data-de>Teilzeit</div>
+          </div>
+          <div class="tl-date">2020 – 2023</div>
+        </div>
+        <ul class="tl-pts" data-en><li>Delivered conceptual lectures and interactive materials; volunteered two years of teaching to support financially constrained students.</li></ul>
+        <ul class="tl-pts" data-de><li>Konzeptionelle Vorlesungen und interaktive Materialien; zwei Jahre ehrenamtlicher Unterricht zur Unterstützung finanziell benachteiligter Studierender.</li></ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="edu" class="s-violet">
+  <div class="wrapper">
+    <div class="slbl"><span data-en>Academic Background</span><span data-de>Akademischer Hintergrund</span></div>
+    <h2><span data-en>Education</span><span data-de>Bildung</span></h2>
+    <div class="tl">
+      <div class="tl-item gold fi">
+        <div class="tl-hd">
+          <div>
+            <div class="tl-title">M.Sc. Biotechnology</div>
+            <div class="tl-org">Hochschule Offenburg, Germany 🇩🇪</div>
+          </div>
+          <div class="tl-date">10/2025 – Present</div>
+        </div>
+        <ul class="tl-pts" data-en>
+          <li><strong>Erasmus Exchange — Sem. 1:</strong> University of Warmia &amp; Mazury, Poland — returning to Offenburg June 2026.</li>
+          <li>Key modules: Industrial Microbiology · Bioinformatics · Applied Biotechnology · Molecular Biomarkers · Bioprocess Engineering · Analytical Chemistry · Environmental Biotechnology (Wastewater Parameters).</li>
+        </ul>
+        <ul class="tl-pts" data-de>
+          <li><strong>Erasmus-Austausch — Semester 1:</strong> Universität Ermland-Masuren, Polen — Rückkehr nach Offenburg, Juni 2026.</li>
+          <li>Hauptmodule: Industrielle Mikrobiologie · Bioinformatik · Angewandte Biotechnologie · Molekulare Biomarker · Bioprozesstechnik · Analytische Chemie · Umweltbiotechnologie (Abwasserparameter).</li>
+        </ul>
+        <div class="tags"><span class="tag">Bioprocess Engineering</span><span class="tag">Analytical Chemistry</span><span class="tag">Wastewater</span><span class="tag">Bioinformatics</span><span class="tag">Molecular Biomarkers</span></div>
+      </div>
+
+      <div class="tl-item gold fi">
+        <div class="tl-hd">
+          <div>
+            <div class="tl-title">B.S. Microbiology</div>
+            <div class="tl-org">Capital University of Science &amp; Technology (CUST), Pakistan 🇵🇰</div>
+          </div>
+          <div class="tl-date">09/2019 – 02/2023</div>
+        </div>
+        <ul class="tl-pts" data-en>
+          <li><strong style="color:var(--gold)">Gold Medalist · Ranked 1st · Full Merit Scholarship</strong></li>
+          <li>5 Dean's Honors · Topped both University and College departments.</li>
+          <li><strong>Supervisor:</strong> Prof. Dr. Shuakat Iqbal — see Thesis section below.</li>
+        </ul>
+        <ul class="tl-pts" data-de>
+          <li><strong style="color:var(--gold)">Goldmedaillengewinnerin · Rang 1 · Vollstipendium</strong></li>
+          <li>5 Dean's Honors · Beste Absolventin der Universität und des Fachbereichs.</li>
+          <li><strong>Betreuer:</strong> Prof. Dr. Shuakat Iqbal — siehe Abschlussarbeitsbereich unten.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THESIS -->
+<section id="thesis" class="section-alt s-rose">
+  <div class="wrapper">
+    <div class="slbl"><span data-en>Published Research</span><span data-de>Veröffentlichte Forschung</span></div>
+    <h2><span data-en>Bachelor's <em>Thesis</em></span><span data-de>Bachelor <em>Abschlussarbeit</em></span></h2>
+
+    <div class="thesis-hero fi">
+      <div class="thesis-tag">📄 <span data-en>B.S. Thesis · ResearchGate Published</span><span data-de>B.Sc. Abschlussarbeit · ResearchGate veröffentlicht</span></div>
+
+      <div class="thesis-title">
+        "The Invisible Threat: Mapping Antibiotic-Resistant Superbugs Across High-Risk Hospital Zones"
+      </div>
+
+      <div class="thesis-supervisor" data-en>
+        <strong>Supervisor:</strong> Prof. Dr. Shuakat Iqbal &nbsp;·&nbsp; Capital University of Science &amp; Technology (CUST), Pakistan &nbsp;·&nbsp; 2023
+      </div>
+      <div class="thesis-supervisor" data-de>
+        <strong>Betreuer:</strong> Prof. Dr. Shuakat Iqbal &nbsp;·&nbsp; Capital University of Science &amp; Technology (CUST), Pakistan &nbsp;·&nbsp; 2023
+      </div>
+
+      <p class="thesis-desc" data-en>
+        This research investigated the distribution and molecular characterisation of antibiotic-resistant bacteria across multiple high-risk zones within hospital environments. Using a combination of classical microbiological culture techniques, antimicrobial susceptibility testing (Kirby-Bauer disk diffusion), PCR-based resistance gene detection, DNA sequencing, and bioinformatics tools (NCBI BLAST, MEGA X, SnapGene), resistance profiles were mapped across clinical zones including ICU, surgical wards, and diagnostic labs. Findings highlighted critical infection control gaps and multidrug-resistant (MDR) pathogen hotspots within clinical settings.
+      </p>
+      <p class="thesis-desc" data-de>
+        Diese Forschung untersuchte die Verbreitung und molekulare Charakterisierung antibiotikaresistenter Bakterien in verschiedenen Hochrisikobereichen von Krankenhausumgebungen. Mithilfe klassischer mikrobiologischer Kulturtechniken, Antibiotikaempfindlichkeitstestung, PCR-basiertem Resistenzgen-Nachweis, DNA-Sequenzierung und Bioinformatikwerkzeugen wurden Resistenzprofile in klinischen Zonen kartiert. Die Ergebnisse zeigten kritische Infektionskontrolllücken und multiresistente Erregerherde.
+      </p>
+
+      <div class="thesis-links">
+        <a href="https://www.researchgate.net/publication/404390486_The_Invisible_Threat_Mapping_Antibiotic-Resistant_Superbugs_Across_High-Risk_Hospital_Zones" target="_blank" class="thesis-link tl-primary">
+          🔬 <span data-en>View on ResearchGate</span><span data-de>Auf ResearchGate ansehen</span>
+        </a>
+        <a href="https://doi.org/10.13140/RG.2.2.14434.49601" target="_blank" class="thesis-link tl-secondary">
+          🔗 DOI: 10.13140/RG.2.2.14434.49601
+        </a>
+      </div>
+
+      <div class="thesis-meta">
+        <div class="tmeta">
+          <div class="tmeta-lbl" data-en>Publication</div>
+          <div class="tmeta-lbl" data-de>Veröffentlichung</div>
+          <div class="tmeta-val">ResearchGate, 2023</div>
+        </div>
+        <div class="tmeta">
+          <div class="tmeta-lbl">DOI</div>
+          <div class="tmeta-val"><a href="https://doi.org/10.13140/RG.2.2.14434.49601" target="_blank">10.13140/RG.2.2.14434.49601</a></div>
+        </div>
+        <div class="tmeta">
+          <div class="tmeta-lbl" data-en>Methods</div>
+          <div class="tmeta-lbl" data-de>Methoden</div>
+          <div class="tmeta-val">PCR · WGS · AMR Testing · Bioinformatics</div>
+        </div>
+        <div class="tmeta">
+          <div class="tmeta-lbl" data-en>Focus</div>
+          <div class="tmeta-lbl" data-de>Schwerpunkt</div>
+          <div class="tmeta-val" data-en>Antimicrobial Resistance · Hospital Pathogens</div>
+          <div class="tmeta-val" data-de>Antibiotikaresistenz · Krankenhauskeime</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills" class="s-violet">
+  <div class="wrapper">
+    <div class="slbl"><span data-en>Expertise</span><span data-de>Fachkenntnisse</span></div>
+    <h2><span data-en>Laboratory <em>Skills</em></span><span data-de>Labor <em>Fähigkeiten</em></span></h2>
+
+    <div class="legend">
+      <span class="pill">Established skill</span>
+      <span style="margin: 0 0.3rem;">·</span>
+      <span class="pill new">Currently learning (M.Sc.)</span>
+    </div>
+
+    <div class="skills-g">
+      <div class="sg fi">
+        <div class="sg-title">🔬 <span data-en>Clinical Diagnostics</span><span data-de>Klinische Diagnostik</span></div>
+        <div class="pills">
+          <span class="pill">Microbial culture</span><span class="pill">Gram staining</span>
+          <span class="pill">Pathogen ID</span><span class="pill">VITEK 2</span>
+          <span class="pill">CBC</span><span class="pill">Blood typing</span>
+          <span class="pill">AMR / MIC</span><span class="pill">Disk diffusion</span>
+        </div>
+      </div>
+      <div class="sg fi">
+        <div class="sg-title">🧬 <span data-en>Molecular Biology</span><span data-de>Molekularbiologie</span></div>
+        <div class="pills">
+          <span class="pill">PCR</span><span class="pill">qPCR</span><span class="pill">RT-PCR</span>
+          <span class="pill">DNA/RNA extraction</span><span class="pill">Gel electrophoresis</span>
+          <span class="pill">WGS</span><span class="pill">SnapGene</span><span class="pill">NCBI BLAST</span>
+          <span class="pill">Sequencing</span>
+        </div>
+      </div>
+      <div class="sg fi">
+        <div class="sg-title">⚗️ <span data-en>Biochemistry &amp; Immunology</span><span data-de>Biochemie &amp; Immunologie</span></div>
+        <div class="pills">
+          <span class="pill">ELISA</span><span class="pill">SDS-PAGE</span><span class="pill">Western blot</span>
+          <span class="pill">Bradford / BCA</span>
+          <span class="pill new">HPLC</span>
+          <span class="pill new">DLS (Dynamic Light Scattering)</span>
+          <span class="pill new">Mass Spectrometry</span>
+          <span class="pill new">FTIR</span><span class="pill new">FAAS</span>
+        </div>
+      </div>
+      <div class="sg fi">
+        <div class="sg-title">💻 <span data-en>Bioinformatics</span><span data-de>Bioinformatik</span></div>
+        <div class="pills">
+          <span class="pill">MEGA X</span><span class="pill">MUSCLE</span><span class="pill">ClustalW</span>
+          <span class="pill">NCBI BLAST</span><span class="pill">SnapGene</span>
+          <span class="pill">UniProt</span><span class="pill">PDB</span>
+          <span class="pill new">Galaxy Bioinformatics</span>
+          <span class="pill new">R / Bioconductor</span>
+          <span class="pill new">Python (Biopython)</span>
+          <span class="pill new">Pathway Analysis</span>
+        </div>
+      </div>
+      <div class="sg fi">
+        <div class="sg-title">🌊 <span data-en>Environmental &amp; Process</span><span data-de>Umwelt &amp; Prozess</span></div>
+        <div class="pills">
+          <span class="pill new">Wastewater parameter analysis</span>
+          <span class="pill new">BOD / COD measurement</span>
+          <span class="pill new">Bioprocess Engineering</span>
+          <span class="pill new">Fermentation technology</span>
+          <span class="pill new">Mass extraction techniques</span>
+          <span class="pill">Aseptic technique</span>
+        </div>
+      </div>
+      <div class="sg fi">
+        <div class="sg-title">📋 <span data-en>Quality &amp; Languages</span><span data-de>Qualität &amp; Sprachen</span></div>
+        <div class="pills">
+          <span class="pill">GLP</span><span class="pill">ISO documentation</span>
+          <span class="pill">QC compliance</span><span class="pill">Scientific reporting</span>
+          <span class="pill">English — C1</span>
+          <span class="pill">Urdu — Native</span>
+          <span class="pill new">German — A2 (improving)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section class="section-alt">
+  <div class="wrapper">
+    <div class="slbl"><span data-en>Research</span><span data-de>Forschung</span></div>
+    <h2><span data-en>Projects &amp; <em>Presentations</em></span><span data-de>Projekte &amp; <em>Präsentationen</em></span></h2>
+    <div class="proj-g">
+      <div class="proj fi"><h4 data-en>Whole Genome Sequencing of Bacterial Genomes</h4><h4 data-de>Whole-Genome-Sequenzierung</h4><p data-en>Sequencing and analysis of bacterial genomes to study genetic variations and resistance mechanisms using MEGA X and NCBI BLAST.</p><p data-de>Sequenzierung und Analyse bakterieller Genome zur Untersuchung genetischer Variationen und Resistenzmechanismen.</p></div>
+      <div class="proj fi"><h4>E Protein of COVID-19 — Bioinformatics Analysis</h4><p data-en>Functional analysis of SARS-CoV-2 E protein via computational and sequencing tools. Coursera-certified, 95%+.</p><p data-de>Funktionelle Analyse des SARS-CoV-2-E-Proteins mittels bioinformatischer Werkzeuge. Coursera-zertifiziert, 95%+.</p></div>
+      <div class="proj fi"><h4 data-en>Early Blight in Potatoes — Punjab</h4><h4 data-de>Frühschorf bei Kartoffeln — Punjab</h4><p data-en>Impact analysis of Alternaria solani on crop yield with identification of effective treatment strategies.</p><p data-de>Analyse der Auswirkungen von Alternaria solani auf den Ernteertrag und Identifizierung wirksamer Behandlungsstrategien.</p></div>
+      <div class="proj fi"><h4 data-en>Shelf Life Enhancement of Guava by Heating</h4><h4 data-de>Haltbarkeitsverlängerung von Guaven</h4><p data-en>Optimized heating techniques to reduce microbial spoilage and extend post-harvest shelf life.</p><p data-de>Optimierung von Erhitzungsverfahren zur Verlängerung der Haltbarkeit nach der Ernte.</p></div>
+      <div class="proj fi"><h4 data-en>Genetic Analysis of Antibiotic Resistance in Microbes</h4><h4 data-de>Genetische Analyse der Antibiotikaresistenz</h4><p data-en>Presented microbial resistance mechanisms and evidence-based strategies to combat antibiotic resistance.</p><p data-de>Präsentation mikrobieller Resistenzmechanismen und evidenzbasierter Strategien zur Bekämpfung der Antibiotikaresistenz.</p></div>
+      <div class="proj fi"><h4 data-en>Effects of Schizophrenia in Health</h4><h4 data-de>Auswirkungen der Schizophrenie auf die Gesundheit</h4><p data-en>Detailed research report covering aetiology, symptoms, and current pharmacological approaches.</p><p data-de>Detaillierter Forschungsbericht über Ätiologie, Symptome und aktuelle pharmakologische Ansätze.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AWARDS -->
+<section id="awards" class="s-emerald">
+  <div class="wrapper">
+    <div class="slbl"><span data-en>Recognition</span><span data-de>Auszeichnungen</span></div>
+    <h2><span data-en>Awards &amp; <em>Honors</em></span><span data-de>Preise &amp; <em>Ehrungen</em></span></h2>
+    <div class="aw-list">
+      <div class="aw fi"><div class="aw-i">🥇</div><div class="aw-t" data-en>Gold Medal — Academic Excellence, B.S. Microbiology, CUST (Ranked 1st, Dec 2022)</div><div class="aw-t" data-de>Goldmedaille — Akademische Exzellenz, B.Sc. Mikrobiologie, CUST (Rang 1, Dez. 2022)</div></div>
+      <div class="aw fi"><div class="aw-i">🏆</div><div class="aw-t" data-en>Topped both University and College departments throughout academic journey</div><div class="aw-t" data-de>Beste Absolventin der Universität und des Fachbereichs</div></div>
+      <div class="aw fi"><div class="aw-i">📜</div><div class="aw-t" data-en>Full Merit Scholarship — PKR 60,000 per semester, CUST (2019–2023)</div><div class="aw-t" data-de>Vollstipendium — PKR 60.000 pro Semester, CUST (2019–2023)</div></div>
+      <div class="aw fi"><div class="aw-i">🎓</div><div class="aw-t" data-en>5 Dean's Honors during Bachelor's degree</div><div class="aw-t" data-de>5× Dekan-Ehrung während des Bachelorstudiums</div></div>
+      <div class="aw fi"><div class="aw-i">🏅</div><div class="aw-t" data-en>Government-Funded Scholarship — HSSC (2016–2018)</div><div class="aw-t" data-de>Staatsstipendium — HSSC (2016–2018)</div></div>
+      <div class="aw fi"><div class="aw-i">📚</div><div class="aw-t" data-en>Merit Scholarship — SSC (2014–2016)</div><div class="aw-t" data-de>Leistungsstipendium — SSC (2014–2016)</div></div>
+      <div class="aw fi"><div class="aw-i">⭐</div><div class="aw-t" data-en>Consistent Position Holder from Class 1 through Class 8</div><div class="aw-t" data-de>Kontinuierlich Klassenbeste von Klasse 1 bis 8</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMMUNITY -->
+<section class="section-alt">
+  <div class="wrapper">
+    <div class="slbl"><span data-en>Beyond the Lab</span><span data-de>Außerhalb des Labors</span></div>
+    <h2><span data-en>Community &amp; <em>Activities</em></span><span data-de>Engagement &amp; <em>Aktivitäten</em></span></h2>
+    <div class="two fi">
+      <div class="card">
+        <div class="clbl" data-en>Volunteer &amp; Community</div>
+        <div class="clbl" data-de>Ehrenamt &amp; Gemeinschaft</div>
+        <div class="cval" style="font-size:0.88rem;color:var(--text2);line-height:1.8;" data-en>
+          Volunteered at Alkhidmat Foundation — free medical aid and food for underprivileged communities.<br>
+          Taught students for two years without payment to support their education.<br>
+          Conference Mediator &amp; Tutor Guide at community development NGO.
+        </div>
+        <div class="cval" style="font-size:0.88rem;color:var(--text2);line-height:1.8;" data-de>
+          Ehrenamtliche Mitarbeit bei der Alkhidmat-Stiftung — kostenlose medizinische Hilfe für Bedürftige.<br>
+          Zwei Jahre unentgeltlicher Unterricht zur Unterstützung finanziell benachteiligter Schüler.<br>
+          Konferenzmoderator &amp; Tutorenguide bei einer NGO.
+        </div>
+      </div>
+      <div class="card">
+        <div class="clbl" data-en>Events &amp; Sports</div>
+        <div class="clbl" data-de>Veranstaltungen &amp; Sport</div>
+        <div class="cval" style="font-size:0.88rem;color:var(--text2);line-height:1.8;" data-en>
+          Event Organiser — Life Sciences Society &amp; University Sports Week.<br>
+          Event Assistant, Genix Society (Life Science Department).<br>
+          Cricket Captain — led teams to two tournament victories.<br>
+          Sports certificates: Cricket, Football, Table Tennis, Badminton.
+        </div>
+        <div class="cval" style="font-size:0.88rem;color:var(--text2);line-height:1.8;" data-de>
+          Veranstaltungsorganisatorin — Life Sciences Society &amp; Uni-Sportwoche.<br>
+          Veranstaltungsassistentin, Genix Society (Life-Science-Fachbereich).<br>
+          Cricket-Kapitänin — führte Teams zu zwei Turniersiegen.<br>
+          Sportabzeichen: Cricket, Fußball, Tischtennis, Badminton.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REFERENCES -->
+<section>
+  <div class="wrapper">
+    <div class="slbl"><span data-en>References</span><span data-de>Referenzen</span></div>
+    <h2><span data-en>Academic <em>References</em></span><span data-de>Akademische <em>Referenzen</em></span></h2>
+    <div class="two fi">
+      <div class="card">
+        <div class="clbl" data-en>Thesis Supervisor</div>
+        <div class="clbl" data-de>Abschlussarbeitsbetreuer</div>
+        <div class="cval"><strong>Prof. Dr. Shaukat Iqbal</strong><br><a href="mailto:drshaukat@cust.edu.pk">drshaukat@cust.edu.pk</a><br>+92-51-111-555-666-563</div>
+      </div>
+      <div class="card">
+        <div class="clbl" data-en>Academic Reference</div>
+        <div class="clbl" data-de>Akademische Referenz</div>
+        <div class="cval"><strong>Asst. Prof. Dr. Sami Ullah Jan</strong><br><a href="mailto:samiullah.jan@cust.edu.pk">samiullah.jan@cust.edu.pk</a><br>+92 332 5779898</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="section-alt s-blue">
+  <div class="wrapper">
+    <div class="slbl"><span data-en>Connect</span><span data-de>Kontakt</span></div>
+    <h2><span data-en>Get In <em>Touch</em></span><span data-de>Nehmen Sie <em>Kontakt auf</em></span></h2>
+    <div class="con-g fi">
+      <div class="con"><div class="ci">✉️</div><div><div class="con-lbl">Email</div><div class="con-val"><a href="mailto:aroojfatimacust21@gmail.com">aroojfatimacust21@gmail.com</a></div></div></div>
+      <div class="con"><div class="ci">📞</div><div><div class="con-lbl" data-en>Germany</div><div class="con-lbl" data-de>Deutschland</div><div class="con-val"><a href="tel:+4915164371174">+49 151 643 71174</a></div></div></div>
+      <div class="con"><div class="ci">📍</div><div><div class="con-lbl" data-en>Location</div><div class="con-lbl" data-de>Standort</div><div class="con-val">Offenburg, Germany</div></div></div>
+      <div class="con"><div class="ci">🎓</div><div><div class="con-lbl" data-en>University</div><div class="con-lbl" data-de>Universität</div><div class="con-val">Hochschule Offenburg</div></div></div>
+      <div class="con"><div class="ci">🔬</div><div><div class="con-lbl">ResearchGate</div><div class="con-val"><a href="https://www.researchgate.net/publication/404390486" target="_blank" data-en>View Publication</a><a href="https://www.researchgate.net/publication/404390486" target="_blank" data-de>Publikation ansehen</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrapper">
+    <p>© 2026 <span>Arooj Fatima</span> · Research Scientist · M.Sc. Biotechnology · Hochschule Offenburg</p>
+  </div>
+</footer>
+
+<script>
+// Scroll fade-in
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); }), {threshold:0.06});
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+// Photo upload
+document.getElementById('pi').addEventListener('change', e => {
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = ev => {
+    const img = document.getElementById('pimg');
+    img.src = ev.target.result; img.style.display = 'block';
+    document.getElementById('pph').style.display = 'none';
+  };
+  r.readAsDataURL(f);
+});
+
+// Language toggle
+function setLang(lang) {
+  document.getElementById('body').className = 'lang-' + lang;
+  document.getElementById('btn-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+  document.getElementById('btn-de').className = 'lang-btn' + (lang === 'de' ? ' active' : '');
+}
+</script>
+</body>
+</html>
